@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title>Polygon Madness</title>
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<script type="text/javascript" src="/static/three.min.js"></script>
+		<script type="text/javascript" src="/static/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/static/rrssb.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/rrssb.css">
+		<link rel="shortcut icon" type="image/png" href="/static/images/favicon.png">
+		<style>
+			body, html { 
+				overflow-x: hidden; 
+				overflow-y: auto;
+				margin: 0px;
+				padding: 0px;
+				font-family: sans-serif;
+			}
+			#debug {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: 0px;
+				margin: 0px;
+				width: 100px;
+				height: 100px;
+				color: white;
+			}
+			#three {
+				width: 100%;
+				height: 100%;
+				background: #f0f0f0;
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				z-index: 1;
+			}
+			#time {
+				position: absolute;
+				top: 20px;
+				width: 100%;
+				color: #a0a0a0;
+				text-align: center;
+				font-family: sans-serif;
+				font-size: 24px;
+				z-index: 2;
+				display: none;
+			}
+			#input {
+				background: green;
+				position: fixed;
+				z-index: 98;
+			}
+			#confirm, #add {
+				background: red;
+				width: 100px;
+				height: 20px;
+			}
+			.centered {
+				position: absolute;
+				width: 400px;
+				left: calc(50% - 200px);
+				top: calc(50% - 300px);
+				text-align: center;
+				background: #f0ffff;
+				font-size: 28px;
+				border-radius: 50px;
+				z-index: 2;
+			}
+			#play, #replay {
+				display: inline-block;
+				font-size: 36px;
+				padding: 10px 15px 10px 15px;
+				border-radius: 10px;
+				color: white;
+				background: #22AA22;
+				cursor: pointer;
+			}
+			#end {
+				display: none;
+			}
+			#share {
+				font-size: 14px; 
+				margin: 15px 0px 15px 0px;
+			}
+			#share-buttons img {
+				width: 35px;
+				padding: 0px;
+				border: 0;
+				box-shadow: 0;
+				display: inline;
+			}
+			a {
+				text-decoration: none;
+			}
+			textarea {
+				z-index: 99;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="time">You have survived for <span class="seconds">0</span> seconds</div>
+		<div id="start" class="centered">
+			<h1>Polygon Madness v1.0</h1>
+			<p>Move with the mouse and avoid the things coming at you!</p>
+			<p style="font-size: 14px;">Can you survive until the end? :-)</p><br>
+			<div id="play">Play</div>
+		</div>
+		<div id="end" class="centered">
+			<h1 id="end-text">You survived for <span class="seconds">0</span> seconds!</h1>
+			<div id="replay">Reload</div>
+			<div id="share">Share your score :-)</div>
+			<div id="share-buttons">
+				    <a href="https://twitter.com/share?url=http://www.polygonmadness.tk&amp;text=Polygon%20Madness&amp;hashtags=polygonmadness" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+				    </a>
+				    <a href="http://www.facebook.com/sharer.php?u=http://www.polygonmadness.tk" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+				    </a>
+				    <a href="https://plus.google.com/share?url=http://www.polygonmadness.tk" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+				    </a>
+			</div>
+		</div>
+		<div id="three" style="width: 100%; height: 100%;"></div>
+		<script src="/static/Main.js"></script>
+	</body>
+</html>
