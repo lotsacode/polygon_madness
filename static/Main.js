@@ -293,7 +293,6 @@ function Enemy(radius, sides, direction, speed, root, phase) {
 /* Init */
 function init() {
     document.addEventListener('mousemove', onMouseMove, true);
-	window.addEventListener( 'resize', onWindowResize, false );
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 100000);
 	renderer = new THREE.WebGLRenderer();
@@ -430,14 +429,6 @@ function onMouseMove(e) {
     dir = null;
     distance = null;
     pos = null;
-}
-
-function onWindowResize(){
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    width = window.innerWidth;
-    height = window.innerHeight;
 }
 
 $(document).ready(function() {
